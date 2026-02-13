@@ -9,7 +9,7 @@ ENTITY Comprator IS
     ) ;
 END ENTITY Comprator ;
 
-ARCHITECTURE Behavioral OF Comprator IS
+ARCHITECTURE BEHAVIOR OF Comprator IS
 BEGIN
     Eq <= '1' WHEN sum = point ELSE '0' ;
-END ARCHITECTURE Behavioral ;
+END ARCHITECTURE BEHAVIOR ;
