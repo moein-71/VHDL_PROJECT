@@ -5,11 +5,11 @@ USE IEEE.NUMERIC_STD.ALL ;
 
 ENTITY COUNTER IS 
     PORT (
-        clk    : IN  STD_LOGIC ;
-        reset  : IN  STD_LOGIC ;
-        roll : IN  STD_LOGIC ;  
-        count  : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)  
-    ) ;
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        roll : IN STD_LOGIC;
+        count : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+    );
 END ENTITY COUNTER ;
 
 ARCHITECTURE BEHAVIOR OF COUNTER IS

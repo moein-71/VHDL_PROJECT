@@ -3,11 +3,11 @@ USE IEEE.STD_LOGIC_1164.ALL ;
 
 ENTITY ConditionLogic IS
     PORT (
-        sum   : IN  STD_LOGIC_VECTOR(3 DOWNTO 0) ;
-        D7    : OUT STD_LOGIC ;
-        D711  : OUT STD_LOGIC ;
+        sum : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        D7 : OUT STD_LOGIC;
+        D711 : OUT STD_LOGIC;
         D2312 : OUT STD_LOGIC
-    ) ;
+    );
 END ENTITY TestLogic ;
 
 ARCHITECTURE BEHAVIOR OF TestLogic IS

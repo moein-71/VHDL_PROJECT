@@ -4,12 +4,12 @@ USE IEEE.NUMERIC_STD.ALL ;
 
 ENTITY PointRegister IS
     PORT (
-        clk   : IN  STD_LOGIC ;
-        reset : IN  STD_LOGIC ;
-        Sp    : IN  STD_LOGIC ;   
-        sum   : IN  STD_LOGIC_VECTOR(3 DOWNTO 0) ;
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        Sp : IN STD_LOGIC;
+        sum : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         point : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
-    ) ;
+    );
 END ENTITY PointRegister ;
 
 ARCHITECTURE BEHAVIOR OF PointRegister IS

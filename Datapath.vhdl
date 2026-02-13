@@ -3,16 +3,16 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY Datapath IS
     PORT (
-        clk    : IN  STD_LOGIC;
-        reset  : IN  STD_LOGIC;
-        Roll   : IN  STD_LOGIC;
-        Sp     : IN  STD_LOGIC;
-        dice1  : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        dice2  : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        D7     : OUT STD_LOGIC;
-        D711   : OUT STD_LOGIC;
-        D2312  : OUT STD_LOGIC;
-        Eq     : OUT STD_LOGIC
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        roll : IN STD_LOGIC;
+        Sp : IN STD_LOGIC;
+        dice1 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        dice2 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        D7 : OUT STD_LOGIC;
+        D711 : OUT STD_LOGIC;
+        D2312 : OUT STD_LOGIC;
+        Eq : OUT STD_LOGIC
     );
 END ENTITY Datapath;
 
@@ -26,10 +26,10 @@ BEGIN
     dice2 <= dice2_s;
 
     WORK_COUNTER : ENTITY work.COUNTER
-        PORT MAP (clk => clk, reset => reset, roll => Roll, count => dice1_s);
+        PORT MAP (clk => clk, reset => reset, roll => roll, count => dice1_s);
 
     WORK_COUNTER : ENTITY work.COUNTER
-        PORT MAP (clk => clk, reset => reset, roll => Roll, count => dice2_s);
+        PORT MAP (clk => clk, reset => reset, roll => roll, count => dice2_s);
 
     WORK_ADDER : ENTITY work.Adder
         PORT MAP (a => dice1_s, b => dice2_s, sum => sum_s);

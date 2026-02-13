@@ -4,10 +4,10 @@ USE IEEE.NUMERIC_STD.ALL ;
 
 ENTITY Adder IS
     PORT (
-        a    : IN  STD_LOGIC_VECTOR(2 DOWNTO 0) ;  
-        b    : IN  STD_LOGIC_VECTOR(2 DOWNTO 0) ;  
-        sum  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)  
-    ) ;
+        a : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        b : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        sum : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    );
 END ENTITY Adder ;
 
 ARCHITECTURE BEHAVIOR OF Adder IS
