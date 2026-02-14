@@ -1,0 +1,6 @@
+work/
+work-*
+*.cf
+*.o
+e~*
+*.vcd

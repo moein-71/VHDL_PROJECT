@@ -1,0 +1,15 @@
+LIBRARY IEEE ;
+USE IEEE.STD_LOGIC_1164.ALL ;
+
+ENTITY Comprator IS
+    PORT (
+        sum : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        point : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        Eq : OUT STD_LOGIC
+    ) ;
+END ENTITY Comprator ;
+
+ARCHITECTURE BEHAVIOR OF Comprator IS
+BEGIN
+    Eq <= '1' WHEN sum = point ELSE '0' ;
+END ARCHITECTURE BEHAVIOR ;
