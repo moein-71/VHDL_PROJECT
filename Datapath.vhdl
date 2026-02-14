@@ -19,16 +19,16 @@ END ENTITY Datapath;
 ARCHITECTURE Structural OF Datapath IS
     SIGNAL dice1_s : STD_LOGIC_VECTOR(2 DOWNTO 0);
     SIGNAL dice2_s : STD_LOGIC_VECTOR(2 DOWNTO 0);
-    SIGNAL sum_s   : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL sum_s : STD_LOGIC_VECTOR(3 DOWNTO 0);
     SIGNAL point_s : STD_LOGIC_VECTOR(3 DOWNTO 0);
 BEGIN
     dice1 <= dice1_s;
     dice2 <= dice2_s;
 
-    WORK_COUNTER : ENTITY work.COUNTER
+    WORK_COUNTER1 : ENTITY work.COUNTER
         PORT MAP (clk => clk, reset => reset, roll => roll, count => dice1_s);
 
-    WORK_COUNTER : ENTITY work.COUNTER
+    WORK_COUNTER2 : ENTITY work.COUNTER
         PORT MAP (clk => clk, reset => reset, roll => roll, count => dice2_s);
 
     WORK_ADDER : ENTITY work.Adder
@@ -37,7 +37,7 @@ BEGIN
     WORK_POINT_REG : ENTITY work.PointRegister
         PORT MAP (clk => clk, reset => reset, Sp => Sp, sum => sum_s, point => point_s);
 
-    WORK_COMPARATOR : ENTITY work.Comprator
+    WORK_COMP : ENTITY work.Comprator
         PORT MAP (sum => sum_s, point => point_s, Eq => Eq);
 
     WORK_TEST_LOGIC : ENTITY work.TestLogic
