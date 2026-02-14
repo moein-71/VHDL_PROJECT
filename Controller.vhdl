@@ -14,7 +14,7 @@ ENTITY Controller IS
         Sp : OUT STD_LOGIC ;
         Win : OUT STD_LOGIC ;
         Lose : OUT STD_LOGIC
-    )  ;
+    ) ;
 
 END ENTITY Controller ;
 
