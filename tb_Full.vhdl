@@ -4,7 +4,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY tb_Full IS
 END ENTITY;
 
-ARCHITECTURE sim OF tb_Full IS
+ARCHITECTURE tb OF tb_Full IS
 
     SIGNAL clk : STD_LOGIC := '0';
     SIGNAL reset : STD_LOGIC := '0';
