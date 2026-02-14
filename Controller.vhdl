@@ -82,6 +82,7 @@ BEGIN
             WHEN DONE_WIN =>
                 Win <= '1' ;
 
+
             WHEN DONE_LOSE =>
                 Lose <= '1' ;
 

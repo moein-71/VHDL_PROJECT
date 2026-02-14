@@ -7,6 +7,7 @@ END ENTITY;
 ARCHITECTURE tb OF tb_Full IS
 
     SIGNAL clk : STD_LOGIC := '0';
+    SIGNAL clk_d : STD_LOGIC := '0';
     SIGNAL reset : STD_LOGIC := '0';
     SIGNAL roll_btn : STD_LOGIC := '0';
 
@@ -50,6 +51,7 @@ BEGIN
     WORK_CRAPS_GAME : ENTITY work.CrapsGame
         PORT MAP (
             clk => clk,
+            clk_d => clk_d,
             reset => reset,
             roll_btn => roll_btn,
             seg1 => seg1, 
@@ -64,39 +66,74 @@ BEGIN
         WAIT FOR 10 ns;
     END PROCESS;
 
+    clk_d_process : PROCESS(clk)
+    BEGIN
+        IF RISING_EDGE(clk) THEN
+            clk_d <= NOT clk_d ;
+        END IF ;
+    END PROCESS ;
+
+
 
     stim_proc : PROCESS
     BEGIN
 
         reset <= '1';
-        WAIT FOR 20 ns;
+        WAIT FOR 30 ns;
         reset <= '0';
-        WAIT FOR 20 ns;
+        WAIT FOR 30 ns;
 
         roll_btn <= '1';
-        WAIT FOR 150 ns;
-        roll_btn <= '0';
-        WAIT FOR 200 ns;
-
-        reset <= '1';
-        WAIT FOR 20 ns;
-        reset <= '0';
-        WAIT FOR 20 ns;
-
-        roll_btn <= '1';
-        WAIT FOR 100 ns;
+        WAIT FOR 70 ns;
         roll_btn <= '0';
         WAIT FOR 100 ns;
 
         reset <= '1';
-        WAIT FOR 20 ns;
+        WAIT FOR 30 ns;
         reset <= '0';
-        WAIT FOR 20 ns;
+        WAIT FOR 30 ns;
 
         roll_btn <= '1';
-        WAIT FOR 120 ns;
+        WAIT FOR 30 ns;
         roll_btn <= '0';
-        WAIT FOR 200 ns;
+        WAIT FOR 100 ns;
+
+        roll_btn <= '1';
+        WAIT FOR 60 ns;
+        roll_btn <= '0';
+        WAIT FOR 100 ns;
+
+        reset <= '1';
+        WAIT FOR 30 ns;
+        reset <= '0';
+        WAIT FOR 30 ns;
+
+        roll_btn <= '1';
+        WAIT FOR 50 ns;
+        roll_btn <= '0';
+        WAIT FOR 100 ns;
+
+        roll_btn <= '1';
+        WAIT FOR 50 ns;
+        roll_btn <= '0';
+        WAIT FOR 100 ns;
+
+        roll_btn <= '1';
+        WAIT FOR 50 ns;
+        roll_btn <= '0';
+        WAIT FOR 100 ns;
+
+        reset <= '1';
+        WAIT FOR 30 ns;
+        reset <= '0';
+        WAIT FOR 30 ns;
+
+        roll_btn <= '1';
+        WAIT FOR 90 ns;
+        roll_btn <= '0';
+        WAIT FOR 100 ns;
+
+
 
         WAIT;
     END PROCESS;

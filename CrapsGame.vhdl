@@ -4,6 +4,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY CrapsGame IS
     PORT (
         clk : IN STD_LOGIC;
+        clk_d : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         roll_btn : IN STD_LOGIC;
         seg1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
@@ -21,6 +22,7 @@ BEGIN
    WORK_DATAPATH : ENTITY work.Datapath
         PORT MAP (
             clk => clk,
+            clk_d => clk_d,
             reset => reset,
             roll => roll,
             Sp => Sp,
