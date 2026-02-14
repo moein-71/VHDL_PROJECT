@@ -75,7 +75,7 @@ BEGIN
 
 
 
-    stim_proc : PROCESS
+    full_proc : PROCESS
     BEGIN
 
         reset <= '1';
@@ -133,9 +133,30 @@ BEGIN
         roll_btn <= '0';
         WAIT FOR 100 ns;
 
-
+        reset <= '1';
+        WAIT FOR 30 ns;
+        reset <= '0';
+        WAIT FOR 30 ns;
 
         WAIT;
     END PROCESS;
 
-END ARCHITECTURE;
+END ARCHITECTURE ;
+
+
+-- ghdl -a --std=08 Counter.vhdl
+-- ghdl -a --std=08 Adder.vhdl
+-- ghdl -a --std=08 PointRegister.vhdl
+-- ghdl -a --std=08 Comprator.vhdl
+-- ghdl -a --std=08 TestLogic.vhdl
+-- ghdl -a --std=08 Controller.vhdl
+-- ghdl -a --std=08 Datapath.vhdl
+-- ghdl -a --std=08 7SEG.vhdl
+-- ghdl -a --std=08 CrapsGame.vhdl
+-- ghdl -a --std=08 tb_Full.vhdl
+
+-- ghdl -e --std=08 tb_Full 
+
+-- ghdl -r --std=08 tb_Full --vcd=full.vcd --stop-time=2us
+
+-- gtkwave full.vcd
